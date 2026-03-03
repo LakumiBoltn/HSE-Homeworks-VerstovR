@@ -1,0 +1,15 @@
+target,type,source,malicious,suspicious,harmless,undetected,country,as_owner,registrar,threat_score,is_threat,src_ip,dest_ip,description,severity,timestamp
+185.220.101.45,ip,virustotal,15.0,2.0,46.0,30.0,DE,Stiftung Erneuerbare Freiheit,,32.0,True,,,,,
+194.165.16.11,ip,virustotal,13.0,1.0,48.0,31.0,MC,Flyservers S.A.,,27.0,True,,,,,
+malware.wicar.org,domain,virustotal,13.0,1.0,48.0,31.0,N/A,,PDR Ltd. d/b/a PublicDomainRegistry.com,27.0,True,,,,,
+91.92.109.14,ip,virustotal,1.0,1.0,58.0,33.0,BG,Neterra Ltd.,,3.0,False,,,,,
+103.41.124.25,ip,virustotal,0.0,1.0,59.0,33.0,HK,N/A,,1.0,False,,,,,
+google.com,domain,virustotal,0.0,0.0,66.0,27.0,N/A,,MarkMonitor Inc.,0.0,False,,,,,
+,alert,suricata,,,,,,,,,True,185.220.101.45,192.168.1.10,ET SCAN Potential SSH Scan,2.0,2026-02-24 08:01:12.123456+00:00
+,alert,suricata,,,,,,,,,True,194.165.16.11,192.168.1.5,ET MALWARE Win32/Gafgyt CnC Beacon,1.0,2026-02-24 08:03:44.654321+00:00
+,alert,suricata,,,,,,,,,True,91.92.109.14,192.168.1.8,ET CHAT IRC USER command,2.0,2026-02-24 08:09:00.777777+00:00
+,alert,suricata,,,,,,,,,True,185.220.101.45,192.168.1.10,ET SCAN Potential SSH Scan,2.0,2026-02-24 08:13:15.999999+00:00
+,alert,suricata,,,,,,,,,True,194.165.16.11,192.168.1.5,ET MALWARE Win32/Gafgyt CnC Beacon,1.0,2026-02-24 08:15:30.101010+00:00
+,alert,suricata,,,,,,,,,True,103.41.124.25,192.168.1.50,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Setting 2,1.0,2026-02-24 08:18:00.202020+00:00
+,alert,suricata,,,,,,,,,True,91.92.109.14,192.168.1.8,ET MALWARE Meterpreter or other Reverse Shell,1.0,2026-02-24 08:20:45.303030+00:00
+,repeated_dns,suricata,,,,,,,,,True,192.168.1.15,N/A,Повтор DNS -> malware.wicar.org (5x),2.0,N/A
