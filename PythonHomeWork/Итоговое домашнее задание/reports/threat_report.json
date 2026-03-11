@@ -1,0 +1,404 @@
+{
+  "report_id": "THREAT-REPORT-20260311-222523",
+  "generated_at": "2026-03-11T22:25:23.273203",
+  "sources_used": [
+    "API VirusTotal",
+    "API Vulners",
+    "Логи безопасности"
+  ],
+  "summary": {
+    "total_threats": 14,
+    "critical_threats": 1,
+    "high_threats": 6,
+    "responses_executed": 14,
+    "blocked_ips": 11
+  },
+  "threats_detailed": [
+    {
+      "source": "VirusTotal",
+      "type": "SUSPICIOUS_IP",
+      "severity": "MEDIUM",
+      "description": "IP адрес 1.1.1.1 вызывает подозрения",
+      "details": {
+        "ip": "1.1.1.1",
+        "suspicious_votes": 1,
+        "country": "US"
+      },
+      "recommendation": "Проверить активность с этого IP",
+      "timestamp": "2026-03-11T22:25:16.220927"
+    },
+    {
+      "source": "VirusTotal",
+      "type": "MALICIOUS_IP",
+      "severity": "HIGH",
+      "description": "IP адрес 185.130.5.133 обнаружен в базах вредоносных IP",
+      "details": {
+        "ip": "185.130.5.133",
+        "malicious_votes": 3,
+        "country": "US",
+        "owner": "CloudFlare"
+      },
+      "recommendation": "Заблокировать IP адрес на межсетевом экране",
+      "timestamp": "2026-03-11T22:25:16.222126"
+    },
+    {
+      "source": "VirusTotal",
+      "type": "MALICIOUS_IP",
+      "severity": "HIGH",
+      "description": "IP адрес 45.155.205.233 обнаружен в базах вредоносных IP",
+      "details": {
+        "ip": "45.155.205.233",
+        "malicious_votes": 2,
+        "country": "RU",
+        "owner": "Unknown"
+      },
+      "recommendation": "Заблокировать IP адрес на межсетевом экране",
+      "timestamp": "2026-03-11T22:25:16.222150"
+    },
+    {
+      "source": "Vulners",
+      "type": "VULNERABILITY",
+      "severity": "CRITICAL",
+      "description": "Критическая уязвимость в Apache Log4j",
+      "details": {
+        "cve_id": "CVE-2024-1234",
+        "cvss_score": 9.8,
+        "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "published": "2024-01-15",
+        "affected_software": "Apache Log4j <= 2.14.1"
+      },
+      "recommendation": "Немедленно обновить Apache Log4j <= 2.14.1",
+      "timestamp": "2026-03-11T22:25:16.222182"
+    },
+    {
+      "source": "Vulners",
+      "type": "VULNERABILITY",
+      "severity": "HIGH",
+      "description": "Уязвимость повышения привилегий в Windows",
+      "details": {
+        "cve_id": "CVE-2024-5678",
+        "cvss_score": 7.5,
+        "cvss_vector": "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "published": "2024-02-20",
+        "affected_software": "Windows 10/11"
+      },
+      "recommendation": "Немедленно обновить Windows 10/11",
+      "timestamp": "2026-03-11T22:25:16.222194"
+    },
+    {
+      "source": "Suricata Logs",
+      "type": "IDS_ALERT",
+      "severity": "MEDIUM",
+      "description": "ET SCAN Potential SSH Scan",
+      "details": {
+        "src_ip": "192.168.1.100",
+        "dest_ip": "45.155.205.233",
+        "dest_port": 22,
+        "category": "Attempted Information Leak"
+      },
+      "recommendation": "Проверить источник и принять меры",
+      "timestamp": "2026-03-10T10:23:15Z"
+    },
+    {
+      "source": "Suricata Logs",
+      "type": "IDS_ALERT",
+      "severity": "MEDIUM",
+      "description": "ET SCAN Telnet Scan",
+      "details": {
+        "src_ip": "192.168.1.100",
+        "dest_ip": "45.155.205.233",
+        "dest_port": 23,
+        "category": "Attempted Information Leak"
+      },
+      "recommendation": "Проверить источник и принять меры",
+      "timestamp": "2026-03-10T10:24:30Z"
+    },
+    {
+      "source": "Suricata Logs",
+      "type": "IDS_ALERT",
+      "severity": "HIGH",
+      "description": "ET MALWARE Known Malware Domain",
+      "details": {
+        "src_ip": "10.0.0.50",
+        "dest_ip": "8.8.8.8",
+        "dest_port": 53,
+        "category": "Malware Domain"
+      },
+      "recommendation": "Проверить источник и принять меры",
+      "timestamp": "2026-03-10T10:25:45Z"
+    },
+    {
+      "source": "Auth Logs",
+      "type": "BRUTE_FORCE_ATTEMPT",
+      "severity": "HIGH",
+      "description": "Обнаружено 5 неудачных попыток входа с IP 203.0.113.45",
+      "details": {
+        "src_ip": "203.0.113.45",
+        "attempts": 5,
+        "threshold": 5
+      },
+      "recommendation": "Заблокировать IP 203.0.113.45 на 24 часа",
+      "timestamp": "2026-03-11T22:25:16.222304"
+    },
+    {
+      "source": "Network Logs",
+      "type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "description": "Обнаружен доступ к подозрительному порту 22",
+      "details": {
+        "src_ip": "192.168.1.100",
+        "dest_ip": "45.155.205.233",
+        "port": 22,
+        "protocol": "TCP"
+      },
+      "recommendation": "Проверить легитимность доступа к порту 22",
+      "timestamp": "2026-03-10T10:23:15Z"
+    },
+    {
+      "source": "Network Logs",
+      "type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "description": "Обнаружен доступ к подозрительному порту 23",
+      "details": {
+        "src_ip": "192.168.1.100",
+        "dest_ip": "45.155.205.233",
+        "port": 23,
+        "protocol": "TCP"
+      },
+      "recommendation": "Проверить легитимность доступа к порту 23",
+      "timestamp": "2026-03-10T10:24:30Z"
+    },
+    {
+      "source": "Network Logs",
+      "type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "description": "Обнаружен доступ к подозрительному порту 445",
+      "details": {
+        "src_ip": "198.51.100.67",
+        "dest_ip": "unknown",
+        "port": 445,
+        "protocol": "TCP"
+      },
+      "recommendation": "Проверить легитимность доступа к порту 445",
+      "timestamp": "2026-03-10T10:35:00Z"
+    },
+    {
+      "source": "Firewall Logs",
+      "type": "BLOCKED_THREAT",
+      "severity": "LOW",
+      "description": "Blocked SMB traffic from external IP",
+      "details": {
+        "src_ip": "198.51.100.67",
+        "dest_port": 445,
+        "protocol": "TCP"
+      },
+      "recommendation": "Проанализировать источник для возможного добавления в черный список",
+      "timestamp": "2026-03-10T10:35:00Z"
+    },
+    {
+      "source": "IDS Logs",
+      "type": "IDS_ALERT",
+      "severity": "HIGH",
+      "description": "ET WEB_SERVER Possible SQL Injection Attempt",
+      "details": {
+        "src_ip": "192.168.1.150",
+        "dest_ip": "10.0.0.200",
+        "category": "Web Application Attack"
+      },
+      "recommendation": "Проверить атаку на веб-приложение",
+      "timestamp": "2026-03-10T10:40:00Z"
+    }
+  ],
+  "responses_detailed": [
+    {
+      "threat_id": 4667762240,
+      "threat_type": "VULNERABILITY",
+      "severity": "CRITICAL",
+      "timestamp": "2026-03-11T22:25:16.222457",
+      "actions_taken": [
+        "console_notification"
+      ]
+    },
+    {
+      "threat_id": 4637189760,
+      "threat_type": "MALICIOUS_IP",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:16.723071",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "185.130.5.133",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222516"
+      }
+    },
+    {
+      "threat_id": 4667762112,
+      "threat_type": "MALICIOUS_IP",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:17.228357",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "45.155.205.233",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222517"
+      }
+    },
+    {
+      "threat_id": 4667762368,
+      "threat_type": "VULNERABILITY",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:17.728735",
+      "actions_taken": [
+        "console_notification"
+      ]
+    },
+    {
+      "threat_id": 4667763008,
+      "threat_type": "IDS_ALERT",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:18.231970",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "10.0.0.50",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222518"
+      }
+    },
+    {
+      "threat_id": 4667763200,
+      "threat_type": "BRUTE_FORCE_ATTEMPT",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:18.736379",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "203.0.113.45",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222518"
+      }
+    },
+    {
+      "threat_id": 4667764160,
+      "threat_type": "IDS_ALERT",
+      "severity": "HIGH",
+      "timestamp": "2026-03-11T22:25:19.241835",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "192.168.1.150",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222519"
+      }
+    },
+    {
+      "threat_id": 4665701632,
+      "threat_type": "SUSPICIOUS_IP",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:19.747301",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "1.1.1.1",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222519"
+      }
+    },
+    {
+      "threat_id": 4667762752,
+      "threat_type": "IDS_ALERT",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:20.248445",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "192.168.1.100",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222520"
+      }
+    },
+    {
+      "threat_id": 4667762880,
+      "threat_type": "IDS_ALERT",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:20.753733",
+      "actions_taken": [
+        "console_notification"
+      ]
+    },
+    {
+      "threat_id": 4667763456,
+      "threat_type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:21.258401",
+      "actions_taken": [
+        "console_notification"
+      ]
+    },
+    {
+      "threat_id": 4667763648,
+      "threat_type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:21.763273",
+      "actions_taken": [
+        "console_notification"
+      ]
+    },
+    {
+      "threat_id": 4667763776,
+      "threat_type": "SUSPICIOUS_PORT_ACCESS",
+      "severity": "MEDIUM",
+      "timestamp": "2026-03-11T22:25:22.267722",
+      "actions_taken": [
+        "console_notification",
+        "ip_blocking"
+      ],
+      "blocking_details": {
+        "blocked_ip": "198.51.100.67",
+        "method": "firewall_rule",
+        "duration": "24 hours",
+        "rule_id": "BLK-20260311222522"
+      }
+    },
+    {
+      "threat_id": 4667763968,
+      "threat_type": "BLOCKED_THREAT",
+      "severity": "LOW",
+      "timestamp": "2026-03-11T22:25:22.770272",
+      "actions_taken": [
+        "console_notification"
+      ]
+    }
+  ],
+  "statistics": {
+    "virustotal": 3,
+    "vulners": 2,
+    "logs": 9,
+    "total_threats": 14,
+    "critical_threats": 1,
+    "high_threats": 6
+  }
+}

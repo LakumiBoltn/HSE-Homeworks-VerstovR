@@ -1,0 +1,105 @@
+{
+  "events": [
+    {
+      "timestamp": "2026-03-10T10:23:15Z",
+      "event_type": "suricata",
+      "src_ip": "192.168.1.100",
+      "dest_ip": "45.155.205.233",
+      "dest_port": 22,
+      "alert": {
+        "signature": "ET SCAN Potential SSH Scan",
+        "category": "Attempted Information Leak",
+        "severity": 2
+      }
+    },
+    {
+      "timestamp": "2026-03-10T10:24:30Z",
+      "event_type": "suricata",
+      "src_ip": "192.168.1.100",
+      "dest_ip": "45.155.205.233",
+      "dest_port": 23,
+      "alert": {
+        "signature": "ET SCAN Telnet Scan",
+        "category": "Attempted Information Leak",
+        "severity": 2
+      }
+    },
+    {
+      "timestamp": "2026-03-10T10:25:45Z",
+      "event_type": "suricata",
+      "src_ip": "10.0.0.50",
+      "dest_ip": "8.8.8.8",
+      "dest_port": 53,
+      "dns": {
+        "type": "query",
+        "rrname": "malware-domain.com",
+        "rdata": null
+      },
+      "alert": {
+        "signature": "ET MALWARE Known Malware Domain",
+        "category": "Malware Domain",
+        "severity": 1
+      }
+    },
+    {
+      "timestamp": "2026-03-10T10:30:00Z",
+      "event_type": "auth",
+      "user": "admin",
+      "src_ip": "203.0.113.45",
+      "status": "failed",
+      "message": "Failed login attempt"
+    },
+    {
+      "timestamp": "2026-03-10T10:30:05Z",
+      "event_type": "auth",
+      "user": "admin",
+      "src_ip": "203.0.113.45",
+      "status": "failed",
+      "message": "Failed login attempt"
+    },
+    {
+      "timestamp": "2026-03-10T10:30:10Z",
+      "event_type": "auth",
+      "user": "admin",
+      "src_ip": "203.0.113.45",
+      "status": "failed",
+      "message": "Failed login attempt"
+    },
+    {
+      "timestamp": "2026-03-10T10:30:15Z",
+      "event_type": "auth",
+      "user": "admin",
+      "src_ip": "203.0.113.45",
+      "status": "failed",
+      "message": "Failed login attempt"
+    },
+    {
+      "timestamp": "2026-03-10T10:30:20Z",
+      "event_type": "auth",
+      "user": "admin",
+      "src_ip": "203.0.113.45",
+      "status": "failed",
+      "message": "Failed login attempt"
+    },
+    {
+      "timestamp": "2026-03-10T10:35:00Z",
+      "event_type": "firewall",
+      "action": "blocked",
+      "src_ip": "198.51.100.67",
+      "dest_port": 445,
+      "protocol": "TCP",
+      "message": "Blocked SMB traffic from external IP"
+    },
+    {
+      "timestamp": "2026-03-10T10:40:00Z",
+      "event_type": "ids",
+      "src_ip": "192.168.1.150",
+      "dest_ip": "10.0.0.200",
+      "alert": {
+        "signature": "ET WEB_SERVER Possible SQL Injection Attempt",
+        "category": "Web Application Attack",
+        "severity": 1
+      }
+    }
+  ]
+}
